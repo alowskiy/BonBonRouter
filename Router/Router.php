@@ -2,7 +2,7 @@
 
 namespace Router;
 
-use Controllers\Users\AuthController;
+
 use Examples\Route1;
 use Examples\Main;
 

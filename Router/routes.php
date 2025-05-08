@@ -1,8 +1,9 @@
 <?php
-use Controllers\Support\TokenService;
-use Controllers\Users\AuthController;
-use Controllers\Users\UserController;
-        $routes = [
+
+//use Controllers\Users\AuthController;
+//use Controllers\Users\UserController;
+
+        $routes =  [ /*
             "/" => [
                 "class" => UserController::class,
                 "method" => "getAll",
@@ -11,4 +12,4 @@ use Controllers\Users\UserController;
                 "class" => UserController::class,
                 "method" => "getByAuth",
             ]
-        ];  
+   */     ];  

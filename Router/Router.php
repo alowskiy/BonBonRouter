@@ -2,9 +2,9 @@
 
 namespace Router;
 
-
-use Examples\Route1;
-use Examples\Main;
+use Controllers\Support\TokenService;
+use Controllers\Users\AuthController;
+use Controllers\Users\UserController;
 
 class Router
 {
@@ -16,25 +16,16 @@ class Router
 
     public function checkRoute($route)
     {
-        $routes = [ //defining routes
-            '/route1' => [                   //URI
-                'class' => Route1::class,    //clasName
-                'method' => 'getData1',      //methodName
-            ],
-            '/' => [     
-                'class' => Main::class, 
-                'method' => 'welcome', 
-            ],
-        ];
+        //Passing uri, className, methodName
+      require_once('routes.php');
 
         $key = array_key_exists($route, $routes);
 
-        if ($key === false) {   // if route  not defined
-            echo 'NotFound!!';
-            http_response_code(404);
+        if ($key === false) {
+            echo "NotFound!!";
         } else {
-            $class = $routes[$route]['class'];
-            $method = $routes[$route]['method'];
+            $class = $routes[$route]["class"];
+            $method = $routes[$route]["method"];
             $inst = new $class();
             $inst->$method();
         }

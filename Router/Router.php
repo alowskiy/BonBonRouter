@@ -16,7 +16,7 @@ class Router
 
     public function checkRoute($route)
     {
-        //Passing uri, className, methodName
+        
       require_once('routes.php');
 
         $key = array_key_exists($route, $routes);
